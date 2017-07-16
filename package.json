@@ -1,0 +1,28 @@
+{
+  "name": "randomgiphy",
+  "version": "1.0.0",
+  "description": "a super simple service to rotate random gifs from giphy onto a page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vAudience/randomgiphy.git"
+  },
+  "keywords": [
+    "giphy",
+    "gif",
+    "random"
+  ],
+  "author": "Toni Wagner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vAudience/randomgiphy/issues"
+  },
+  "homepage": "https://github.com/vAudience/randomgiphy#readme",
+  "dependencies": {
+    "dot": "^1.1.2",
+    "giphy-api": "^1.2.6"
+  }
+}

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script>
+      setTimeout(
+        function() {
+          reload(true);
+        },
+        2000
+      );
+    </script>
+  </head>
+  <body>
+      <div>{{=it.hellotext}}</div>
+      <img src="{{=it.tnxgiphy}}" style="max-width: 200px; max-height: 200px; margin: auto">
+      <div>{{=it.tnxgiphy}</div>
+  </body>
+</html>

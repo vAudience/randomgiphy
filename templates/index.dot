@@ -1,0 +1,52 @@
+<html style="margin: 0; border: 0; padding: 0; overflow: none">
+  <head>
+    <script>
+      settings = {
+        pause: 8000,
+        duration: 8000,
+      };
+      var parameters = document.location.search.split('?');
+      console.warn(parameters);
+      if (typeof parameters[1] === 'string') {
+        var options = parameters[1].split('&');
+        console.warn(options);
+        for (var n = 0; n < options.length; n += 1) {
+          var kv = options[n].split('=');
+          console.warn(kv);
+          if (kv.length === 2) {
+            settings[kv[0]] = parseInt(kv[1]);
+            console.log('SET ', kv[0], ' to ', settings[kv[0]]);
+          }
+        }
+      }
+      for (var n in settings) {
+        if (isNaN(settings[n])) {
+          if (n === 'duration') {
+            settings.duration = 12000;
+          } else if (n === 'pause') {
+            settings.pause = 10000;
+          }
+        }
+      }
+      setTimeout(
+        function() {
+          document.location.reload(true);
+        },
+        settings.duration + settings.pause
+      );
+      setTimeout(
+        function() {
+          var main = document.getElementById('main');
+          document.body.removeChild(main);
+        },
+        settings.duration
+      );
+    </script>
+  </head>
+  <body>
+    <div id="main" style="width: 200px; height: 200px; text-align:right; vertical-align:bottom; overflow:visible; display:table-cell">
+      <img id="giphy" src="{{=it.giphylink}}" style="max-width: 200px; max-height: 200px; margin: auto">
+      <!-- <div>{{=it.tnxgiphy}}</div> -->
+    </div>
+  </body>
+</html>
